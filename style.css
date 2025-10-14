@@ -1,11 +1,12 @@
 /* Custom properties for colors */
 :root {
-    --color-primary: #EE1565; /* Pink/Red for primary actions */
-    --color-secondary: #000;  /* Dark text */
-    --color-tertiary: #5A5A5A; /* Gray for text/links */
+    --color-primary: #EE1565; 
+    --color-secondary: #000;
+    --color-tertiary: #5A5A5A; 
     --color-background: #fff;
-    --color-light-bg: #F8F8F8; /* Light gray section background */
-    --color-stars: #FFC107; /* Gold/Yellow for stars */
+    --color-light-bg: #F8F8F8;
+    --color-stars: #FFC107;
+    --color-accent-green: #00A95F; 
 }
 
 /* Base Reset and Typography */
@@ -28,18 +29,33 @@ a {
     transition: color 0.3s;
 }
 
-/* Logo Placeholder for visuals */
-.logo-placeholder {
+/* =================================
+   NAVBAR & LOGO STYLING
+   ================================= */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-secondary);
+}
+
+.logo-img {
     width: 35px;
     height: 35px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
     margin-right: 10px;
 }
 
-/* =================================
-   BUTTONS
-   ================================= */
+.nav-icon {
+    /* Style for the small image icons in the mobile menu */
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ... (Button and other Navbar styles for completeness) ... */
 .btn {
     padding: 12px 25px;
     border: none;
@@ -51,22 +67,19 @@ a {
     text-align: center;
     white-space: nowrap;
 }
-
 .btn-primary { 
     background-color: var(--color-primary);
     color: var(--color-background);
 }
-
 .btn-secondary { 
     background-color: var(--color-background);
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
-    border-radius: 50px; /* Rounded pill style */
+    border-radius: 50px; 
     padding: 15px 30px;
     letter-spacing: 0.5px;
     font-size: 14px;
 }
-
 .btn-tertiary, .btn-contact { 
     background-color: var(--color-primary);
     color: var(--color-background);
@@ -76,10 +89,6 @@ a {
     letter-spacing: 0.5px;
     font-size: 14px;
 }
-
-/* =================================
-   NAVBAR & MOBILE MENU
-   ================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -88,52 +97,27 @@ a {
     max-width: 1440px;
     margin: 0 auto;
 }
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--color-secondary);
-}
-
 .desktop-nav a:not(.btn) {
     margin-right: 25px;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-tertiary);
 }
-
-.desktop-nav .btn {
-    margin-left: 10px;
-}
-
 .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--color-primary); }
-
-/* Mobile Menu Overlay */
 .mobile-nav-menu {
-    position: fixed;
-    top: 0;
-    right: -300px; 
-    width: 300px;
-    height: 100%;
-    background-color: var(--color-background);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-    padding: 20px;
+    position: fixed; top: 0; right: -300px; width: 300px; height: 100%;
+    background-color: var(--color-background); box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out; z-index: 1000; padding: 20px;
 }
-
 .mobile-nav-menu.open { right: 0; }
 .close-menu { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--color-primary); }
 .logo-mobile { display: flex; align-items: center; margin-bottom: 30px; font-weight: 700; line-height: 1.2; }
 .mobile-nav-menu nav a { display: block; padding: 15px 0; margin-bottom: 5px; border-bottom: 1px solid #eee; font-size: 16px; color: var(--color-secondary); }
-.mobile-nav-menu nav a i { margin-right: 10px; color: var(--color-primary); }
 .btn-contact { display: block; margin-top: 30px; text-align: center; }
 
+
 /* =================================
-   HERO SECTION (Includes new positioning)
+   HERO SECTION STYLING
    ================================= */
 .hero-wrapper {
     background-color: var(--color-light-bg);
@@ -152,24 +136,31 @@ a {
 .hero-content {
     flex: 1;
     max-width: 45%;
-    padding-bottom: 80px; /* To align the bottom of the image and the content block */
+    padding-bottom: 80px;
 }
 
 .hero-image-container {
     flex: 1;
     max-width: 55%;
-    position: relative; /* Context for absolute positioning of stats */
+    position: relative;
 }
 
 .hero-image {
-    /* Pink background applied with image-like gradient */
-    background: linear-gradient(to top, #ffe6eb 0%, #fff 100%);
-    /* Replace with the actual image of the girl */
-    background-image: url('hero-girl.png'); /* Placeholder, use your actual image */
+    /* HERO IMAGE: Using the provided HeroImage.png as background */
+    background: 
+        /* Pink Gradient from the background circles */
+        linear-gradient(to top, #ffe6eb 0%, rgba(255, 255, 255, 0) 100%),
+        /* Hero Image - Note: Using .png extension for provided image link */
+        url('') no-repeat center bottom; 
     background-size: cover;
-    background-position: center bottom;
-    aspect-ratio: 1.3 / 1; /* Approximate aspect ratio of the image area */
+    aspect-ratio: 1.3 / 1; 
     border-radius: 0 0 10px 10px;
+   
+   min-height: 600px;
+
+  width: 700px;
+  
+  
 }
 
 .hero-title {
@@ -180,12 +171,14 @@ a {
     color: var(--color-secondary);
 }
 
-.hero-title span {
+/* UNDERLINE EFFECT: Using the provided Underline.png */
+.underline-text {
     color: var(--color-primary);
-    /* Mimic the underline effect */
-    border-bottom: 4px solid var(--color-primary);
-    padding-bottom: 5px;
-    line-height: 1.4; /* To ensure the underline isn't too close to the text */
+    display: inline-block;
+    background: url('https://uploads.onecompiler.io/43zecvabz/43zecrs9z/Underline.png') no-repeat center bottom; 
+    background-size: 105% auto; 
+    padding-bottom: 20px; 
+    line-height: 1.4;
 }
 
 .hero-text {
@@ -195,38 +188,29 @@ a {
     max-width: 500px;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-/* Stat Positioning (Crucial Correction) */
-
+/* Stat Positioning */
 .rating-badge {
     position: absolute;
-    bottom: 5%; /* Adjust as needed */
-    left: 15%; /* Adjust as needed */
-    transform: translateX(-50%); /* Center based on its own width */
-    
+    bottom: 5%; 
+    left: 15%; 
+    transform: translateX(-50%);
     background-color: #fff;
     padding: 15px 25px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 180px; /* Fixed width to match design */
+    width: 180px;
 }
 
 .rating-number {
     font-size: 32px;
     font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 5px;
+    color: var(--color-accent-green); 
+    /* The number is part of the HeroImage.png, so we hide this text element */
+    display: none; 
 }
 
 .stars {
@@ -242,15 +226,13 @@ a {
 
 .online-resumes-stat {
     position: absolute;
-    bottom: 5%; /* Align with rating badge bottom */
+    bottom: 5%;
     right: 15%;
     transform: translateX(50%); 
-
     background-color: #fff;
     padding: 15px 25px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -258,12 +240,10 @@ a {
     width: 180px;
 }
 
-.grad-cap-icon-placeholder {
-    width: 30px;
-    height: 30px;
-    background-color: var(--color-primary);
-    -webkit-mask: url(grad-cap.svg) no-repeat center; /* Use a grad cap SVG icon here */
-    mask: url(grad-cap.svg) no-repeat center;
+.grad-cap-icon {
+    /* Using a Font Awesome icon and coloring it red to match the design */
+    color: var(--color-primary);
+    font-size: 30px;
     margin-bottom: 5px;
 }
 
@@ -274,19 +254,25 @@ a {
     display: block;
     margin-bottom: 5px;
 }
-.online-resumes-stat .text {
-    font-size: 14px;
-    color: var(--color-tertiary);
-}
 
 /* =================================
-   "WHAT YOU GET" SECTION
+   "WHAT YOU GET" SECTION STYLING
    ================================= */
 .what-you-get {
     text-align: center;
     padding: 80px 50px;
     max-width: 1440px;
     margin: 0 auto;
+}
+
+.feature-icon {
+    width: 100%;
+    max-width: 150px; 
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-tag {
@@ -312,7 +298,7 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    text-align: left;
+    text-align: center; 
 }
 
 .feature-card {
@@ -320,15 +306,7 @@ a {
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.feature-icon-placeholder {
-    /* Placeholder for the feature illustrations */
-    width: 100%;
-    height: 150px;
-    background-color: var(--color-light-bg);
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border: 1px solid #eee;
 }
 
 .feature-card h3 {
@@ -337,7 +315,7 @@ a {
     line-height: 1.4;
     color: var(--color-secondary);
     margin-bottom: 15px;
-    min-height: 50px; /* Ensure vertical alignment */
+    min-height: 50px;
 }
 
 .feature-card p {
@@ -345,120 +323,41 @@ a {
     color: var(--color-tertiary);
 }
 
-
 /* =================================
    MEDIA QUERIES (Responsiveness)
    ================================= */
 
-/* Tablet and smaller desktop */
 @media (max-width: 1024px) {
-    .navbar, .hero-section, .what-you-get {
-        padding: 20px 30px;
-    }
-
+    .navbar, .hero-section, .what-you-get { padding: 20px 30px; }
     .desktop-nav { display: none; }
     .menu-toggle { display: block; }
 
     .hero-section {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 40px;
+        flex-direction: column-reverse; text-align: center; padding-top: 40px; min-height: auto;
     }
-
     .hero-content {
-        max-width: 100%;
-        padding-bottom: 30px;
+        max-width: 100%; padding-bottom: 30px;
     }
-    
-    .hero-image-container {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-    
-    .hero-image {
-        aspect-ratio: 1 / 1; /* Make image container more square on mobile */
-    }
-
-    .hero-title {
-        font-size: 40px;
-    }
-    
-    .hero-text {
-        max-width: 100%;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
+    .hero-image-container { max-width: 100%; margin-bottom: 30px; }
+    .hero-image { min-height: 400px; }
+    .hero-buttons { justify-content: center; }
 
     /* Adjust stat positioning for smaller screens */
-    .rating-badge {
-        left: 50%;
-        transform: translateX(-150%);
-        bottom: 10%;
-    }
-    
-    .online-resumes-stat {
-        right: 50%;
-        transform: translateX(150%);
-        bottom: 10%;
-    }
-
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
-    }
+    .rating-badge { left: 50%; transform: translateX(-150%); bottom: 10%; }
+    .online-resumes-stat { right: 50%; transform: translateX(150%); bottom: 10%; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mobile-specific adjustments */
 @media (max-width: 600px) {
-    .hero-title {
-        font-size: 32px;
-    }
+    .hero-title { font-size: 32px; }
+    .hero-buttons { flex-direction: column; gap: 15px; }
+    .features-grid { grid-template-columns: 1fr; }
+    
+    /* On mobile, remove the image column and display a simplified stat bar in the content */
+    .hero-image-container { display: none; }
+    .hero-content { display: flex; flex-direction: column; align-items: center; }
 
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr; /* 1 column on mobile */
-    }
-    
-    .feature-card {
-        text-align: center;
-    }
-    
-    /* Center the feature icon placeholder on mobile */
-    .feature-icon-placeholder {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Stack stats vertically on very small screens (move them to hero-content area) */
-    .hero-image {
-        position: relative;
-    }
-    
-    .rating-badge, .online-resumes-stat {
-        position: static;
-        width: 100%;
-        transform: none;
-        margin-bottom: 10px;
-        box-shadow: none;
-    }
-    
-    /* A quick way to hide the stats on the small image and display them inline in content */
-    .hero-image-container {
-        display: none;
-    }
-    
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Re-add the stats container (or a simplified version) at the bottom of hero-content */
+    /* Simplified stat bar replacement */
     .hero-content::after {
         content: "4.9 Instructor Rating | 260+ Online Resume Created";
         font-size: 14px;
@@ -466,7 +365,5 @@ a {
         margin-top: 20px;
     }
 
-    .section-title {
-        font-size: 24px;
-    }
+    .section-title { font-size: 24px; }
 }
